@@ -1,0 +1,193 @@
+@azul: #2b6cb0;
+@oscuro: #1a365d;
+@claro: #f4f7fa;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.boton {
+  display: inline-block;
+  background: @azul;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 6px;
+
+  &:hover {
+    background: @oscuro;
+  }
+}
+
+.navbar {
+  background: @oscuro;
+
+  .contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  nav a {
+    color: #cbd5e0;
+    margin-left: 20px;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.hero {
+  background: @azul;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}
+
+.servicios {
+  background: @claro;
+  padding: 60px 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3,
+    p {
+      padding: 0 15px;
+    }
+
+    h3 {
+      margin-top: 15px;
+    }
+
+    p {
+      margin: 8px 0 20px;
+    }
+  }
+}
+
+.mitad {
+  display: flex;
+  min-height: 380px;
+
+  .texto,
+  img {
+    width: 50%;
+  }
+
+  .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.invertido {
+  flex-direction: row-reverse;
+}
+
+.footer {
+  background: @oscuro;
+  color: #cbd5e0;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: #cbd5e0;
+    margin-left: 15px;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .servicios .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .mitad,
+  .invertido {
+    flex-direction: column;
+
+    .texto,
+    img {
+      width: 100%;
+    }
+  }
+
+  .navbar .contenedor,
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
